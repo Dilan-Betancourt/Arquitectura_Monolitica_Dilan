@@ -1,40 +1,335 @@
-<!-- Version 1-->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1020">
+    <meta name="description" content="Una guía visual y educativa para comprender la arquitectura monolítica, su estructura, ventajas, desventajas y usos.">
+    <title>Arquitectura Monolítica | MONOLITH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#inicio" aria-label="MONOLITH, ir al inicio">
+          <span class="brand-mark" aria-hidden="true">M</span> MONOLITH
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir o cerrar menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#que-es">¿Qué es?</a></li>
+            <li class="nav-item"><a class="nav-link" href="#estructura">Estructura</a></li>
+            <li class="nav-item"><a class="nav-link" href="#ventajas">Ventajas y desventajas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+            <li class="nav-item"><a class="nav-link" href="#ejemplos">Ejemplos</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<style>
-    table,
-    th,
-    td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-</style>
+    <main>
+      <section class="hero" id="inicio">
+        <div class="container position-relative">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7" data-reveal>
+              <span class="hero-label"><span class="status-dot" aria-hidden="true"></span> Guía de arquitectura de software</span>
+              <h1>ARQUITECTURA <span class="gradient-text">MONOLÍTICA</span></h1>
+              <p class="hero-subtitle">Una aplicación. Una estructura integrada. Un sistema completo.</p>
+              <p class="hero-copy">Descubre cómo se construyen las aplicaciones monolíticas, cómo se conectan sus componentes y por qué esta arquitectura continúa siendo útil en numerosos proyectos de software.</p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-primary-custom btn-lg px-4" href="#que-es">Explorar arquitectura <span aria-hidden="true">→</span></a>
+                <a class="btn btn-outline-custom btn-lg px-4" href="#video">Ver video <span aria-hidden="true">▷</span></a>
+              </div>
+              <div class="d-flex flex-wrap gap-4 mt-4 text-muted-custom small">
+                <span><span class="text-info">●</span> Conceptos esenciales</span>
+                <span><span class="text-info">●</span> Ejemplos prácticos</span>
+                <span><span class="text-info">●</span> Comparación clara</span>
+              </div>
+            </div>
+            <div class="col-lg-5" data-reveal>
+              <div class="hero-visual" role="img" aria-label="Diagrama conceptual de una aplicación monolítica con módulos de interfaz, negocio, autenticación y datos conectados dentro de una unidad">
+                <div class="visual-top">
+                  <span class="window-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                  <span>vista-arquitectura.app</span>
+                  <span aria-hidden="true">•••</span>
+                </div>
+                <div class="app-shell">
+                  <div class="app-shell-title"><span>Aplicación integrada</span><span>● UN SOLO DESPLIEGUE</span></div>
+                  <div class="module-grid">
+                    <div class="module"><span class="module-icon" aria-hidden="true">▤</span><span><strong>Interfaz</strong><small>Pantallas y formularios</small></span></div>
+                    <div class="module"><span class="module-icon" aria-hidden="true">⌘</span><span><strong>Negocio</strong><small>Reglas y operaciones</small></span></div>
+                    <div class="module"><span class="module-icon" aria-hidden="true">◉</span><span><strong>Autenticación</strong><small>Acceso y usuarios</small></span></div>
+                    <div class="module"><span class="module-icon" aria-hidden="true">▧</span><span><strong>Acceso a datos</strong><small>Consultas y persistencia</small></span></div>
+                  </div>
+                  <div class="module-link" aria-hidden="true"></div>
+                  <div class="database-chip"><span aria-hidden="true">▤</span> Base de datos</div>
+                </div>
+                <p class="mb-0 mt-3 text-center small text-muted-custom">Módulos conectados y empaquetados como una aplicación.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<table>
-    <tbody>
-        <tr>
-            <th scope="row">APELLIDO</th>
-            <td>Betancourt</td>
-        </tr>
-        <tr>
-            <th scope="row">NOMBRE</th>
-            <td>Dilan</td>
-        </tr>
-        <tr>
-            <th scope="row">EMAIL</th>
-            <td><a href="mailto:dilan.betancourt1860@utc.edu.ec">dilan.betancourt1860@utc.edu.ec</a></td>
-        </tr>
-        <tr>
-            <th scope="row">DIRECCION</th>
-            <td>Latacunga</td>
-        </tr>
-        <tr>
-            <th scope="row">ACERCA DE MI</th>
-            <td>Mi edad es 22 años, estudio Ingeniería en Software</td>
-        </tr>
-        <tr>
-            <th scope="row">FOTO PERSONAL</th>
-            <td><img src="img/foto_personal.jpg" alt="Foto personal de Dilan"></td>
-        </tr>
-    </tbody>
-</table>
- 
+      <section class="section-space soft-section" id="que-es">
+        <div class="container">
+          <header class="text-center mb-5" data-reveal>
+            <span class="section-kicker">01 · Fundamentos</span>
+            <h2 class="section-title">¿Qué es la arquitectura monolítica?</h2>
+            <p class="section-intro">Una forma de construir software donde las principales funcionalidades forman parte de una aplicación integrada y se despliegan como una única unidad.</p>
+          </header>
+          <div class="concept-callout mb-4" data-reveal>
+            La arquitectura monolítica es un estilo de diseño de software en el que los principales componentes de una aplicación se desarrollan, integran y despliegan como una única unidad. Aunque el código puede organizarse internamente en módulos, sus componentes forman parte de una aplicación integrada.
+          </div>
+          <div class="row g-3">
+            <div class="col-sm-6 col-lg-3" data-reveal>
+              <article class="info-card">
+                <span class="feature-icon" aria-hidden="true">▣</span>
+                <h3>Una sola aplicación</h3>
+                <p>Las funcionalidades principales pertenecen al mismo sistema y, habitualmente, se ejecutan dentro de un mismo proceso.</p>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3" data-reveal>
+              <article class="info-card">
+                <span class="feature-icon" aria-hidden="true">↔</span>
+                <h3>Componentes relacionados</h3>
+                <p>Los módulos colaboran mediante llamadas internas y comparten los recursos y el contexto de la aplicación.</p>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3" data-reveal>
+              <article class="info-card">
+                <span class="feature-icon" aria-hidden="true">⬆</span>
+                <h3>Despliegue conjunto</h3>
+                <p>La aplicación se construye y publica como una unidad, aunque pueda conectarse a servicios externos como una base de datos.</p>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3" data-reveal>
+              <article class="info-card">
+                <span class="feature-icon" aria-hidden="true">▦</span>
+                <h3>Módulos internos</h3>
+                <p>Monolítico no significa desordenado: separar el código por responsabilidades ayuda a mantener límites claros.</p>
+              </article>
+            </div>
+          </div>
+          <div class="row align-items-center g-4 mt-3" data-reveal>
+            <div class="col-lg-4">
+              <p class="section-kicker mb-2">Un ejemplo cotidiano</p>
+              <h3 class="h4 fw-bold">La tienda en una aplicación</h3>
+            </div>
+            <div class="col-lg-8">
+              <p class="text-muted-custom mb-0">Un sistema para una tienda puede integrar inventario, usuarios, ventas y facturación. Cada función puede organizarse en su propio módulo, pero todas forman parte de la misma aplicación y se publican juntas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space" id="estructura">
+        <div class="container">
+          <header class="text-center mb-5" data-reveal>
+            <span class="section-kicker">02 · Organización</span>
+            <h2 class="section-title">¿Cómo está estructurada?</h2>
+            <p class="section-intro">Una organización habitual separa las responsabilidades en capas. Es una forma común de ordenar el sistema, no una estructura obligatoria para todos los monolitos.</p>
+          </header>
+          <div class="flow-wrap mb-4" data-reveal>
+            <span class="flow-label">Recorrido de una solicitud</span>
+            <ol class="flow-list" aria-label="Flujo desde el usuario hasta la base de datos">
+              <li><span class="flow-node">Usuario<small>Inicia una acción</small></span><span class="flow-arrow" aria-hidden="true">→</span></li>
+              <li><span class="flow-node">Presentación<small>Recibe la solicitud</small></span><span class="flow-arrow" aria-hidden="true">→</span></li>
+              <li><span class="flow-node">Lógica de negocio<small>Aplica las reglas</small></span><span class="flow-arrow" aria-hidden="true">→</span></li>
+              <li><span class="flow-node">Acceso a datos<small>Prepara consultas</small></span><span class="flow-arrow" aria-hidden="true">→</span></li>
+              <li><span class="flow-node database">Base de datos<small>Guarda información</small></span></li>
+            </ol>
+          </div>
+          <div class="row g-4 align-items-stretch">
+            <div class="col-lg-7" data-reveal>
+              <div class="layers-box h-100">
+                <p class="section-kicker mb-3">Dentro de la aplicación</p>
+                <div class="layer-row"><span class="layer-number">01</span><span><strong>Capa de presentación</strong><small>Interfaces, formularios y pantallas que utiliza la persona.</small></span></div>
+                <div class="layer-row"><span class="layer-number">02</span><span><strong>Capa de lógica de negocio</strong><small>Reglas, operaciones y decisiones de la aplicación.</small></span></div>
+                <div class="layer-row"><span class="layer-number">03</span><span><strong>Capa de acceso a datos</strong><small>Consultas y comunicación entre el sistema y la base de datos.</small></span></div>
+              </div>
+            </div>
+            <div class="col-lg-5" data-reveal>
+              <article class="architecture-card">
+                <span class="feature-icon" aria-hidden="true">▤</span>
+                <h3>La base de datos</h3>
+                <p>La aplicación puede conectarse a una base de datos para conservar información. Por lo general, esta se ejecuta como un recurso externo al proceso de la aplicación, aunque forma parte de la solución completa.</p>
+                <div class="database-note">Las capas ayudan a separar responsabilidades; no convierten por sí solas al sistema en microservicios.</div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space soft-section" id="caracteristicas">
+        <div class="container">
+          <header class="text-center mb-5" data-reveal>
+            <span class="section-kicker">03 · A tener en cuenta</span>
+            <h2 class="section-title">Características principales</h2>
+            <p class="section-intro">El estilo monolítico describe cómo se integra y despliega la aplicación, no la calidad de su código ni el tamaño de cada módulo.</p>
+          </header>
+          <div class="row g-3">
+            <div class="col-sm-6 col-lg-4" data-reveal><article class="feature-card"><span class="feature-icon" aria-hidden="true">▧</span><h3>Código integrado</h3><p>Las funcionalidades pertenecen a una misma aplicación, aunque vivan en módulos distintos.</p></article></div>
+            <div class="col-sm-6 col-lg-4" data-reveal><article class="feature-card"><span class="feature-icon" aria-hidden="true">⬆</span><h3>Despliegue como unidad</h3><p>Las versiones de la aplicación se generan y publican de forma conjunta.</p></article></div>
+            <div class="col-sm-6 col-lg-4" data-reveal><article class="feature-card"><span class="feature-icon" aria-hidden="true">↔</span><h3>Comunicación interna</h3><p>Los componentes suelen interactuar directamente dentro del sistema, sin comunicación de red entre servicios.</p></article></div>
+            <div class="col-sm-6 col-lg-4" data-reveal><article class="feature-card"><span class="feature-icon" aria-hidden="true">✓</span><h3>Desarrollo y pruebas centralizados</h3><p>Es posible ejecutar y probar gran parte de la aplicación desde un mismo entorno.</p></article></div>
+            <div class="col-sm-6 col-lg-4" data-reveal><article class="feature-card"><span class="feature-icon" aria-hidden="true">▦</span><h3>Organización modular posible</h3><p>Un diseño con módulos cohesivos puede mantener límites internos y facilitar el mantenimiento.</p></article></div>
+            <div class="col-sm-6 col-lg-4" data-reveal><article class="feature-card"><span class="feature-icon" aria-hidden="true">↗</span><h3>Escalado habitualmente conjunto</h3><p>Normalmente se escala la aplicación como unidad, aunque existen estrategias más específicas según la tecnología.</p></article></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space" id="ventajas">
+        <div class="container">
+          <header class="text-center mb-5" data-reveal>
+            <span class="section-kicker">04 · Evaluación equilibrada</span>
+            <h2 class="section-title">Ventajas y desventajas</h2>
+            <p class="section-intro">Cada enfoque implica compromisos. El resultado depende del diseño, la implementación y las necesidades concretas del proyecto.</p>
+          </header>
+          <div class="row g-4">
+            <div class="col-lg-6" data-reveal>
+              <article class="balance-card pros">
+                <h3>Ventajas</h3>
+                <ul class="balance-list">
+                  <li>Relativamente sencilla de desarrollar para proyectos pequeños.</li>
+                  <li>Facilita la ejecución y las pruebas locales.</li>
+                  <li>Permite compartir componentes y lógica dentro de la aplicación.</li>
+                  <li>Simplifica el despliegue al manejar una única unidad.</li>
+                  <li>Puede ser económica de operar en sistemas pequeños y medianos.</li>
+                </ul>
+              </article>
+            </div>
+            <div class="col-lg-6" data-reveal>
+              <article class="balance-card cons">
+                <h3>Desventajas</h3>
+                <ul class="balance-list">
+                  <li>Los cambios pueden requerir volver a desplegar la aplicación completa.</li>
+                  <li>El crecimiento del código puede dificultar el mantenimiento si falta organización.</li>
+                  <li>Un fallo puede afectar a diferentes funcionalidades que comparten el mismo proceso.</li>
+                  <li>Escalar una funcionalidad concreta de manera independiente suele ser más difícil.</li>
+                  <li>Los equipos grandes pueden tener conflictos al trabajar en un código compartido.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <p class="text-center text-muted-custom mt-4 mb-0" data-reveal>Un monolito no es necesariamente lento, inseguro o imposible de escalar: estas cualidades dependen de cómo se diseña y opera.</p>
+        </div>
+      </section>
+
+      <section class="section-space soft-section" id="video">
+        <div class="container">
+          <header class="text-center mb-5" data-reveal>
+            <span class="section-kicker">05 · Recurso audiovisual</span>
+            <h2 class="section-title">APRENDE CON EL VIDEO</h2>
+            <p class="section-intro">Refuerza tus conocimientos con una explicación audiovisual de la arquitectura monolítica.</p>
+          </header>
+          <div class="video-panel" data-reveal>
+            <div class="video-frame" id="videoFrame">
+              <div class="video-placeholder" id="videoPlaceholder">
+                <span class="play-mark" aria-hidden="true">▷</span>
+                <h3 class="h5 fw-bold text-white">Tu video aparecerá aquí</h3>
+                <p class="mb-0">Aún no se ha configurado un video. Añade la ruta de un archivo MP4 local o una URL de YouTube en la configuración de esta página.</p>
+              </div>
+              <video id="localVideo" controls playsinline preload="metadata" aria-label="Video educativo sobre arquitectura monolítica" hidden></video>
+              <iframe id="youtubeVideo" title="Video educativo sobre arquitectura monolítica" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+            </div>
+            <div class="video-meta" id="videoMeta"><span aria-hidden="true"></span> </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space" id="ejemplos">
+        <div class="container">
+          <header class="text-center mb-5" data-reveal>
+            <span class="section-kicker">06 · Casos ilustrativos</span>
+            <h2 class="section-title">Ejemplos de la vida real</h2>
+            <p class="section-intro">Estos sistemas podrían diseñarse como una aplicación integrada. Son ejemplos ilustrativos; no describen la arquitectura de plataformas comerciales específicas.</p>
+          </header>
+          <div class="row g-3">
+            <div class="col-sm-6 col-lg-4" data-reveal><article class="example-card"><span class="example-number">EJEMPLO 01</span><h3>Inventario de una tienda</h3><p>Productos, existencias, proveedores y reportes se integran en una aplicación para el negocio.</p></article></div>
+            <div class="col-sm-6 col-lg-4" data-reveal><article class="example-card"><span class="example-number">EJEMPLO 02</span><h3>Gestión académica</h3><p>Un mismo sistema puede reunir estudiantes, cursos, matrículas y calificaciones.</p></article></div>
+            <div class="col-sm-6 col-lg-4" data-reveal><article class="example-card"><span class="example-number">EJEMPLO 03</span><h3>Facturación empresarial</h3><p>Clientes, documentos, impuestos y reportes pueden formar parte de una aplicación de gestión.</p></article></div>
+            <div class="col-sm-6 col-lg-6" data-reveal><article class="example-card"><span class="example-number">EJEMPLO 04</span><h3>Administración interna</h3><p>Una herramienta de uso interno puede centralizar solicitudes, usuarios y paneles de seguimiento.</p></article></div>
+            <div class="col-sm-6 col-lg-6" data-reveal><article class="example-card"><span class="example-number">EJEMPLO 05</span><h3>Reservas de un negocio</h3><p>Un negocio pequeño puede gestionar horarios, clientes y reservas en un solo sistema.</p></article></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space soft-section" id="comparacion">
+        <div class="container">
+          <header class="text-center mb-5" data-reveal>
+            <span class="section-kicker">07 · Dos estilos, distintos compromisos</span>
+            <h2 class="section-title">Monolito y microservicios</h2>
+            <p class="section-intro">La diferencia principal está en cómo se organizan y despliegan las partes del sistema.</p>
+          </header>
+          <div class="row g-4">
+            <div class="col-lg-6" data-reveal>
+              <article class="compare-card monolith">
+                <h3><span class="feature-icon" aria-hidden="true">▣</span> Arquitectura monolítica</h3>
+                <ul class="compare-list">
+                  <li>Una aplicación integrada.</li>
+                  <li>Despliegue de la aplicación como una unidad.</li>
+                  <li>Componentes que pueden compartir proceso y recursos internos.</li>
+                  <li>Posibilidad de organizar el sistema en módulos internos.</li>
+                </ul>
+              </article>
+            </div>
+            <div class="col-lg-6" data-reveal>
+              <article class="compare-card services">
+                <h3><span class="feature-icon" aria-hidden="true">◈</span> Arquitectura de microservicios</h3>
+                <ul class="compare-list">
+                  <li>Conjunto de servicios que pueden desplegarse de manera independiente.</li>
+                  <li>Comunicación entre servicios mediante interfaces definidas.</li>
+                  <li>Posibilidad de escalar servicios individualmente.</li>
+                  <li>Mayor complejidad operativa y de comunicación distribuida.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <div class="concept-callout mt-4" data-reveal>Ninguna arquitectura es universalmente superior. La elección depende de la complejidad, el equipo, los requisitos y los objetivos del proyecto.</div>
+        </div>
+      </section>
+
+      <section class="section-space" id="conclusion">
+        <div class="container">
+          <div class="conclusion-box" data-reveal>
+            <span class="section-kicker">08 · Para concluir</span>
+            <h2 class="section-title text-start mx-0 mb-3">¿SIGUE SIENDO ÚTIL LA ARQUITECTURA MONOLÍTICA?</h2>
+            <p>Sí. La arquitectura monolítica continúa siendo una opción válida para numerosos proyectos. Su estructura integrada puede facilitar el desarrollo, las pruebas y el despliegue, especialmente cuando el sistema tiene un alcance controlado. La clave consiste en evaluar las necesidades reales del proyecto y mantener una organización interna clara.</p>
+            <a class="btn btn-primary-custom px-4 mt-2" href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-5">
+            <a class="footer-brand text-decoration-none" href="#inicio">MONOLITH</a>
+            <p class="text-muted-custom small mb-0 mt-2">Explorando los fundamentos de la arquitectura de software.</p>
+          </div>
+          <nav class="col-lg-5" aria-label="Enlaces del pie de página">
+            <ul class="footer-links">
+              <li><a href="#que-es">¿Qué es?</a></li>
+              <li><a href="#estructura">Estructura</a></li>
+              <li><a href="#ventajas">Ventajas y desventajas</a></li>
+              <li><a href="#video">Video</a></li>
+              <li><a href="#ejemplos">Ejemplos</a></li>
+            </ul>
+          </nav>
+          <div class="col-lg-2 text-lg-end">
+            <span class="text-muted-custom small">© <span id="currentYear"></span> · Fines educativos</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
