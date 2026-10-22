@@ -35,7 +35,6 @@ jobs:
             index.html
             css/
             js/
-            video/
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -585,16 +585,11 @@ a:hover {
     #080d1a;
 }
 
-.video-frame--native {
-  aspect-ratio: auto;
-}
-
-.video-frame video {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-height: min(80svh, 780px);
-  object-fit: contain;
+.video-frame--tiktok {
+  width: min(100%, 420px, 45svh);
+  max-height: 80svh;
+  margin-inline: auto;
+  aspect-ratio: 9 / 16;
 }
 
 .video-frame iframe {
@@ -604,26 +599,6 @@ a:hover {
   height: 100%;
   border: 0;
   object-fit: contain;
-}
-
-.video-placeholder {
-  max-width: 540px;
-  padding: 2rem;
-  color: var(--muted);
-  text-align: center;
-}
-
-.play-mark {
-  display: grid;
-  width: 4rem;
-  height: 4rem;
-  margin: 0 auto 1rem;
-  place-items: center;
-  border: 1px solid rgba(34, 211, 238, .36);
-  border-radius: 50%;
-  background: rgba(34, 211, 238, .09);
-  color: var(--cyan);
-  font-size: 1.3rem;
 }
 
 .video-meta {

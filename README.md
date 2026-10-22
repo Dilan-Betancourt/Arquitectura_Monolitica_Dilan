@@ -18,15 +18,13 @@ La página está hecha con HTML5, CSS3 y JavaScript, sin proceso de compilación
 
 ## Publicación en GitHub Pages
 
-El flujo de [publicación de Pages](./.github/workflows/pages.yml) despliega la página y los videos opcionales al hacer push a `main`; también puede ejecutarse manualmente.
+El flujo de [publicación de Pages](./.github/workflows/pages.yml) despliega la página al hacer push a `main`; también puede ejecutarse manualmente.
 
 1. En el repositorio de GitHub, abre **Settings → Pages**.
 2. En **Build and deployment**, selecciona **GitHub Actions** como origen.
 3. Haz push de los cambios a `main` o ejecuta **Deploy to GitHub Pages** desde la pestaña **Actions**.
 4. Espera a que finalice el flujo y abre la URL que aparece en **Settings → Pages**.
 
-## Video opcional
+## Video de TikTok
 
-El reproductor admite una ruta relativa a un MP4 o un enlace de YouTube. En `js/main.js`, configura `localVideoSource` **o** `youtubeVideoUrl` y deja la otra variable vacía. Para YouTube se aceptan enlaces `youtube.com/watch`, `youtube.com/embed` y `youtu.be`. El flujo de Pages publica `index.html`, las carpetas `css/`, `js/` y `video/`.
-
-No añadas archivos de video grandes al repositorio: GitHub rechaza archivos individuales de más de 100 MB y pueden hacer que el despliegue sea innecesariamente pesado. El MP4 que está en el entorno de desarrollo no se incluye por defecto. Para publicar un video local, usa una exportación optimizada en MP4 (H.264/AAC), comprueba que pese menos de 100 MB y colócala en `video/`.
+El video se muestra mediante el reproductor integrado de TikTok en `index.html`, por lo que no es necesario guardar el archivo de video en el repositorio. Para cambiarlo, actualiza el identificador en la URL de inserción `https://www.tiktok.com/embed/v2/` y el enlace original de TikTok.
